@@ -9,7 +9,7 @@ Loop, parse, jisa, `,
 	
 	MouseClick, left,  622,40
 	Sleep, 2000
-	
+	id:=
 	send, %A_LoopField% {enter}{enter} 
 	sleep, 2000
 	period := 2010010120100430, 2010050120100831, 2010090120101231,2011010120110430, 2011050120110831, 2011090120111231,2012010120120430, 2012050120120831, 2012090120121231,2013010120130430, 2013050120130831, 2013090120121231,2014010120140430, 2014050120140831, 2014090120141231
@@ -39,7 +39,14 @@ Loop, parse, jisa, `,
 		IfWinNotActive, ahk_class XLMAIN
 		Send, {ALTDOWN}c{ALTUP}
 		else 
-		{winactivate, 국민건강
+
+		{
+			while
+			{
+				winactivate, ahk_id %id%
+				controlsend,
+				break
+			}
 		}
 		
 		IfWinActive, ahk_class XLMAIN
