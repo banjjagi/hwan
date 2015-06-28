@@ -38,6 +38,10 @@ Loop, parse, jisa, `,
 		
 		IfWinNotActive, ahk_class XLMAIN
 		Send, {ALTDOWN}c{ALTUP}
+		else 
+		{winactivate, 국민건강
+		}
+		
 		IfWinActive, ahk_class XLMAIN
 		IfWinNotActive, ahk_class XLMAIN
 		Send, {ALTDOWN}{F4}{ALTUP}
