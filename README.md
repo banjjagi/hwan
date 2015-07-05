@@ -12,7 +12,6 @@
 			- 전화 or 팩스 여부
 		2) mariaDB
 
-
 3. 이미지 인식을 위한 개발 시작
 	- 이미지 처리부터 시작해야
 	- Digit Recognition(Kaggle을 중심으로)
@@ -21,3 +20,7 @@
 4. 원격 업무처리를 위한 제반 준비
 	- Chrome 원격데스크탑, TeamViewer
 	- VPN(OpenVPN 등)
+	
+5. 업무 자동화
+	- 기지급, EDI, 자동이체
+	- 관련 인물 리스트 업(번호 기반)ㅁㅁ
