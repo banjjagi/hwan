@@ -33,7 +33,7 @@ Loop, parse, jisa, `,
 		
 		if (PixelSearch, x1, y1, 0, 0, 1600, 900, C8D7E6)
 		{
-			
+					
 		}
 		
 		IfWinNotActive, ahk_class XLMAIN
