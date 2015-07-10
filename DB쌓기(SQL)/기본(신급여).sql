@@ -83,20 +83,18 @@ use jigup;
 	ENCLOSED BY '"'
 	LINES TERMINATED BY '\r\n';
 
-	# 공백 데이터 삭제
-		delete from jigup.db_jigup_new where jigup.db_jigup_new.Astatus not in("실시간완료","계좌송금");
-	# 지사연계계좌 삭제
-		delete from jigup.db_jigup_new where left(rrno_Acc,10)="999999-999";
-		select * from jigup.db_jigup_new where left(AccOwner,2)="건보";
-	# 예금주 공백 데이터 삭제
-		delete from jigup.db_jigup_new where AccOwner="";
-	# 은행명 공백 데이터 삭제		
-		delete from jigup.db_jigup_new where bank="";
+		# 이상자료 삭제
+			# 지급결과 이상자료 삭제
+				delete from jigup.db_jigup_new where category not in("반송수정","최초접수");
+			# 공백 데이터 삭제
+				delete from jigup.db_jigup_new where jigup.db_jigup_new.Astatus not in("실시간지급완료","계좌송금");
+			# 지사연계계좌 삭제
+				delete from jigup.db_jigup_new where left(rrno_Acc,10)="999999-999";
+			# 예금주 공백 데이터 삭제
+				delete from jigup.db_jigup_new where AccOwner="";
+			# 은행명 공백 데이터 삭제		
+				delete from jigup.db_jigup_new where bank="";
 		
-# 계좌연계용 데이터
-	# 접수방법 종류 뽑아내기
-		select distinct sort_jupsu from jigup.db_jigup_new;
-
 # db_jigup_new1 만들기
 	create table jigup.db_jigup_new1 like jigup.db_jigup_new;
 	insert into jigup.db_jigup_new1 select distinct * from jigup.db_jigup_new;
